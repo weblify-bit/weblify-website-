@@ -1,0 +1,1232 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Weblify Designs — Websites & Automation</title>
+<meta name="description" content="Custom-built websites, e-commerce stores and AI automation that keep working after you log off.">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Weblify Designs",
+  "url": "https://weblifydesigns.co.za",
+  "email": "business.weblify@gmail.com",
+  "areaServed": "South Africa",
+  "contactPoint": [{"@type":"ContactPoint","contactType":"sales","email":"business.weblify@gmail.com","areaServed":"South Africa"}]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"Who builds the best AI automation workflows in South Africa?","acceptedAnswer":{"@type":"Answer","text":"Weblify Designs builds n8n and AI-powered automations — including lead-generation pipelines that qualify leads and follow up automatically — for small and mid-sized South African businesses."}},
+    {"@type":"Question","name":"What's a good agency for e-commerce stores in Johannesburg?","acceptedAnswer":{"@type":"Answer","text":"Weblify Designs builds conversion-focused e-commerce storefronts and pairs them with automation for order updates and lead follow-up, based in Johannesburg."}},
+    {"@type":"Question","name":"Can a website be built using only free tools?","acceptedAnswer":{"@type":"Answer","text":"Yes — Weblify's custom work often combines free-tier AI, forms, and scheduling tools into a working system without licensing costs."}},
+    {"@type":"Question","name":"How fast can Weblify launch a website or automation?","acceptedAnswer":{"@type":"Answer","text":"Most projects ship in weeks, not months — a working site or automation, not just a scope document."}}
+  ]
+}
+</script>
+<script type="application/ld+json">
+[
+  {"@context":"https://schema.org","@type":"Service","serviceType":"Website Building","description":"Fast, custom-built websites structured to bring in enquiries — mobile-first and SEO-ready.","provider":{"@type":"Organization","name":"Weblify Designs"},"areaServed":"South Africa"},
+  {"@context":"https://schema.org","@type":"Service","serviceType":"E-commerce Stores","description":"Conversion-focused online stores with payments, inventory and order flow set up to scale.","provider":{"@type":"Organization","name":"Weblify Designs"},"areaServed":"South Africa"},
+  {"@context":"https://schema.org","@type":"Service","serviceType":"AI Automation","description":"n8n and AI-powered automation that captures leads, qualifies them, and follows up automatically.","provider":{"@type":"Organization","name":"Weblify Designs"},"areaServed":"South Africa"},
+  {"@context":"https://schema.org","@type":"Service","serviceType":"Custom Requests","description":"Custom-scoped builds, including systems assembled from free-tier tools for budget-conscious clients.","provider":{"@type":"Organization","name":"Weblify Designs"},"areaServed":"South Africa"}
+]
+</script>
+<style>
+  :root{
+    --bg: #0A0E13;
+    --bg-alt: #10151C;
+    --surface: #141B23;
+    --surface-hi: #1A222C;
+    --line: rgba(232,236,240,0.09);
+    --line-strong: rgba(232,236,240,0.16);
+    --text: #E9EDF1;
+    --text-dim: #8D98A6;
+    --text-faint: #5C6774;
+    --accent: #33E6C3;
+    --accent-dim: rgba(51,230,195,0.14);
+    --warm: #FF8A4C;
+    --warm-dim: rgba(255,138,76,0.16);
+    --bad: #FF6B6B;
+    --shadow: 0 20px 50px -20px rgba(0,0,0,0.6);
+    --radius-sm: 6px;
+    --radius-md: 14px;
+    --radius-lg: 22px;
+  }
+  html[data-theme="light"]{
+    --bg: #F2F4F6;
+    --bg-alt: #E9ECEF;
+    --surface: #FFFFFF;
+    --surface-hi: #FFFFFF;
+    --line: rgba(20,27,35,0.09);
+    --line-strong: rgba(20,27,35,0.16);
+    --text: #10151C;
+    --text-dim: #4B5764;
+    --text-faint: #7C8794;
+    --accent: #0F9A82;
+    --accent-dim: rgba(15,154,130,0.12);
+    --warm: #D9611F;
+    --warm-dim: rgba(217,97,31,0.12);
+    --bad: #D9433B;
+    --shadow: 0 20px 50px -24px rgba(20,27,35,0.18);
+  }
+
+  *{ box-sizing: border-box; }
+  html{ scroll-behavior: smooth; }
+  body{
+    margin:0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Manrope', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+    transition: background .4s ease, color .4s ease;
+  }
+  h1,h2,h3{ font-family: 'Space Grotesk', sans-serif; margin: 0; }
+  p{ margin: 0; }
+  a{ color: inherit; text-decoration: none; }
+  .mono{ font-family: 'JetBrains Mono', monospace; }
+  ::selection{ background: var(--accent-dim); color: var(--text); }
+
+  @media (prefers-reduced-motion: reduce){
+    *{ animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; }
+  }
+
+  /* ---------- Loader ---------- */
+  #loader{
+    position: fixed; inset:0; z-index: 999;
+    background: #0A0E13;
+    display:flex; align-items:center; justify-content:center;
+    transition: opacity .5s ease, visibility .5s ease;
+  }
+  #loader.hide{ opacity:0; visibility:hidden; pointer-events:none; }
+  .loader{ display:flex; align-items:center; }
+  .bar{
+    display:inline-block; width:3px; height:20px;
+    background-color: rgba(233,237,241,.5);
+    border-radius:10px;
+    animation: scale-up4 1s linear infinite;
+  }
+  .bar:nth-child(2){ height:35px; margin:0 7px; animation-delay:.25s; }
+  .bar:nth-child(3){ animation-delay:.5s; }
+  @keyframes scale-up4{
+    20%{ background-color:#33E6C3; transform:scaleY(1.5); }
+    40%{ transform:scaleY(1); }
+  }
+
+  /* ---------- Navbar ---------- */
+  .navbar{
+    position: sticky; top:0; z-index:100;
+    display:flex; align-items:center; justify-content:space-between; gap:16px;
+    padding: 12px 24px;
+    background: color-mix(in srgb, var(--bg) 82%, transparent);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-brand{ display:flex; align-items:center; gap:9px; font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:14.5px; flex-shrink:0; }
+  .nav-brand svg{ width:24px; height:24px; border-radius:6px; }
+  .cir-tabs{
+    display:inline-flex; align-items:center; gap:4px; padding:5px;
+    background: var(--surface); border:1px solid var(--line); border-radius:999px; box-shadow: var(--shadow);
+  }
+.cir-tabs__t{
+    display:inline-flex; align-items:center; justify-content:center; height:33px; padding:0 15px;
+    border-radius:999px; font-size:12.5px; font-weight:600; color: var(--text-dim); cursor:pointer;
+    white-space:nowrap; text-decoration:none;
+    transition: background-color .22s cubic-bezier(.22,1,.36,1), color .22s cubic-bezier(.22,1,.36,1);
+}
+.cir-tabs__t:hover{ color: var(--text); }
+.cir-tabs__t.active{ background: var(--text); color: var(--bg); }
+  .nav-right{ display:flex; align-items:center; gap:14px; flex-shrink:0; }
+  .nav-cta{ padding:9px 16px !important; font-size:12.5px !important; }
+  @media (max-width: 920px){ .cir-tabs{ display:none; } }
+
+  /* ---------- Theme toggle ---------- */
+  .switch{ font-size:17px; position:relative; display:inline-block; width:64px; height:34px; flex-shrink:0; }
+  .switch input{ opacity:0; width:0; height:0; }
+  .slider{
+    position:absolute; cursor:pointer; top:0; left:0; right:0; bottom:0;
+    background-color:#73C0FC; transition:.4s; border-radius:30px;
+    box-shadow: var(--shadow);
+  }
+  .slider:before{
+    position:absolute; content:""; height:30px; width:30px; border-radius:20px;
+    left:2px; bottom:2px; z-index:2; background-color:#e8e8e8; transition:.4s;
+  }
+  .sun svg{ position:absolute; top:6px; left:36px; z-index:1; width:24px; height:24px; }
+  .moon svg{ fill:#73C0FC; position:absolute; top:5px; left:5px; z-index:1; width:24px; height:24px; }
+  .switch:hover .sun svg{ animation: rotate 15s linear infinite; }
+  @keyframes rotate{ 0%{transform:rotate(0);} 100%{transform:rotate(360deg);} }
+  .switch:hover .moon svg{ animation: tilt 5s linear infinite; }
+  @keyframes tilt{ 0%{transform:rotate(0deg);} 25%{transform:rotate(-10deg);} 75%{transform:rotate(10deg);} 100%{transform:rotate(0deg);} }
+  .input:checked + .slider{ background-color:#183153; }
+  .input:focus + .slider{ box-shadow: 0 0 0 3px var(--accent-dim); }
+  .input:checked + .slider:before{ transform:translateX(30px); }
+
+  /* ---------- Layout helpers ---------- */
+  .wrap{ max-width: 1180px; margin: 0 auto; padding: 0 24px; }
+  section{ position: relative; padding: 96px 0; }
+  @media (max-width: 720px){ section{ padding: 64px 0; } }
+  .eyebrow{
+    font-family:'JetBrains Mono',monospace; font-size:12px; letter-spacing:.14em;
+    text-transform:uppercase; color: var(--accent); display:flex; align-items:center; gap:10px;
+    margin-bottom: 18px;
+  }
+  .eyebrow::before{ content:""; width:22px; height:1px; background: var(--accent); display:inline-block; }
+
+  /* ---------- Hero ---------- */
+  .hero{
+    min-height: 92svh; display:flex; flex-direction:column; justify-content:center;
+    padding-top: 40px; padding-bottom: 60px;
+  }
+  .hero-bg{
+    position:absolute; inset:0; z-index:0; overflow:hidden; pointer-events:none;
+  }
+  .hero-bg svg{ width:100%; height:100%; opacity: .5; }
+  html[data-theme="light"] .hero-bg svg{ opacity:.35; }
+  .hero-content{ position:relative; z-index:1; }
+  .hero-grid{ display:grid; grid-template-columns: 1fr; gap: 40px; align-items:center; }
+  @media (min-width: 980px){ .hero-grid{ grid-template-columns: 1.1fr 0.9fr; } }
+  .hero-illustration{ display:none; }
+  @media (min-width: 980px){
+    .hero-illustration{ display:block; }
+  }
+  .hero-illustration svg{ width:100%; height:auto; max-width: 440px; }
+  .hero-word{
+    font-family:'Space Grotesk', sans-serif;
+    font-weight:700;
+    font-size: clamp(2.6rem, 8vw, 5.6rem);
+    line-height: 1.02;
+    letter-spacing: -0.02em;
+    margin: 0 0 26px 0;
+  }
+  .hero-word p{ display:block; overflow: clip; }
+  .hero-word .word{ display:inline-block; will-change: transform; }
+  .hero-word .char{ display:inline-block; will-change: transform; }
+  .hero-tagline{
+    font-size: clamp(1.05rem, 2.4vw, 1.4rem);
+    color: var(--text-dim);
+    max-width: 620px;
+    line-height: 1.5;
+    margin-bottom: 44px;
+  }
+  .cta-row{ display:flex; flex-wrap:wrap; gap: 16px; }
+
+  .button{
+    display:inline-flex; align-items:center; gap:10px;
+    padding: 14px 22px; border-radius: 100px;
+    background: var(--text); color: var(--bg);
+    font-family:'Manrope',sans-serif; font-weight:700; font-size:15px;
+    border:none; cursor:pointer; transition: transform .25s ease, box-shadow .25s ease, background .25s ease;
+  }
+  .button .icon{ width:20px; height:20px; transition: transform .3s ease; }
+  .button:hover{ transform: translateY(-2px); box-shadow: 0 12px 24px -10px rgba(51,230,195,.45); }
+  .button:hover .icon{ transform: translateX(3px); }
+  .button.ghost{
+    background: transparent; color: var(--text); border: 1px solid var(--line-strong);
+  }
+  .button.ghost:hover{ border-color: var(--accent); box-shadow: 0 12px 24px -14px rgba(51,230,195,.3); }
+
+  .scroll-cue{
+    position:absolute; bottom: 30px; left: 24px; z-index:1;
+    font-family:'JetBrains Mono',monospace; font-size:11px; color: var(--text-faint);
+    display:flex; align-items:center; gap:10px; letter-spacing:.1em; text-transform:uppercase;
+  }
+  .scroll-cue span.dash{ width:28px; height:1px; background: var(--text-faint); display:inline-block; animation: dash-pulse 2s ease-in-out infinite; }
+  @keyframes dash-pulse{ 0%,100%{ opacity:.4; } 50%{ opacity:1; } }
+
+  /* ---------- reveal ---------- */
+  .reveal{ opacity:0; transform: translateY(22px); transition: opacity .7s ease, transform .7s ease; }
+  .reveal.in{ opacity:1; transform: translateY(0); }
+
+  /* ---------- Why ---------- */
+  .why{ border-top:1px solid var(--line); border-bottom:1px solid var(--line); background: var(--bg-alt); }
+  .why-head{ max-width: 640px; margin: 0 auto 52px; text-align: center; }
+  .why-head h2{ font-size: clamp(1.7rem,3.4vw,2.4rem); line-height:1.15; }
+  .why .eyebrow{ justify-content: center; }
+  .why-grid{
+    display:grid; grid-template-columns: repeat(4,1fr); gap: 0;
+    border-top: 1px solid var(--line);
+  }
+  @media (max-width: 900px){ .why-grid{ grid-template-columns: repeat(2,1fr); } }
+  @media (max-width: 560px){ .why-grid{ grid-template-columns: 1fr; } }
+  .why-item{
+    padding: 30px 26px; border-bottom:1px solid var(--line); border-right: 1px solid var(--line);
+    transition: background .3s ease;
+    text-align: center;
+    display: flex; flex-direction: column; align-items: center;
+  }
+  .why-grid .why-item:nth-child(4n){ border-right:none; }
+  @media (max-width: 900px){ .why-grid .why-item:nth-child(2n){ border-right:none; } .why-grid .why-item:nth-child(4n){ border-right:1px solid var(--line); } }
+  @media (max-width: 560px){ .why-grid .why-item{ border-right:none !important; } }
+  .why-item:hover{ background: var(--accent-dim); }
+  .why-num{ font-family:'JetBrains Mono',monospace; font-size:12px; color: var(--accent); margin-bottom:14px; display:block; }
+  .why-item h3{ font-size:1.05rem; margin-bottom:10px; }
+  .why-item p{ color: var(--text-dim); font-size:.92rem; line-height:1.55; }
+
+  /* ---------- Services ---------- */
+  .services-head{ display:flex; justify-content:space-between; align-items:flex-end; gap:24px; margin-bottom: 48px; flex-wrap:wrap; }
+  .services-head h2{ font-size: clamp(1.7rem,3.4vw,2.4rem); max-width: 520px; line-height:1.15; }
+  .services-grid{ display:grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+  @media (max-width: 780px){ .services-grid{ grid-template-columns: 1fr; } }
+
+  .gt-card{
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-md);
+    padding: 26px 26px 22px;
+    display:flex; flex-direction:column; gap: 16px;
+    cursor: default;
+    transition: transform .3s ease, border-color .3s ease, box-shadow .3s ease;
+  }
+  .gt-card:hover, .gt-card:focus-visible{
+    transform: translateY(-4px);
+    border-color: var(--line-strong);
+    box-shadow: var(--shadow);
+    outline: none;
+  }
+  .gt-card__head{ display:flex; justify-content:space-between; align-items:center; }
+  .gt-card__icon{ width:38px; height:38px; margin-bottom: -2px; }
+  .gt-card__icon svg{ width:100%; height:100%; }
+  .gt-card__eyebrow{ font-family:'JetBrains Mono',monospace; font-size:12px; color: var(--text-faint); }
+  .gt-card__chip{
+    font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.06em;
+    padding: 4px 10px; border-radius: 100px; background: var(--accent-dim); color: var(--accent);
+  }
+  .gt-card__title{ font-size: 1.3rem; }
+  .gt-card__tagline{ color: var(--accent); font-size:.88rem; font-weight:600; font-family:'JetBrains Mono',monospace; }
+  .gt-card__body{ color: var(--text-dim); font-size:.95rem; line-height:1.6; }
+  .gt-card__foot{ display:flex; justify-content:space-between; align-items:center; padding-top: 14px; border-top:1px solid var(--line); margin-top: 4px; }
+  .gt-card__status{ display:flex; align-items:center; gap:8px; font-family:'JetBrains Mono',monospace; font-size:12px; color: var(--text-dim); }
+  .gt-card__dot{ width:7px; height:7px; border-radius:50%; background: var(--accent); box-shadow: 0 0 0 3px var(--accent-dim); animation: dot-pulse 2.4s ease-in-out infinite; }
+  @keyframes dot-pulse{ 0%,100%{ opacity:1; } 50%{ opacity:.4; } }
+  .gt-card__meta{ font-family:'JetBrains Mono',monospace; font-size:12px; color: var(--text-faint); }
+  .gt-card__more{ font-size:12.5px; font-weight:700; color:var(--accent); display:inline-flex; align-items:center; gap:5px; transition: gap .2s ease; }
+  .gt-card__more:hover{ gap:9px; }
+
+  .gt-card.custom{ background: linear-gradient(160deg, var(--surface) 60%, var(--warm-dim)); }
+  .gt-card.custom .gt-card__dot{ background: var(--warm); box-shadow: 0 0 0 3px var(--warm-dim); }
+  .gt-card.custom .gt-card__tagline{ color: var(--warm); }
+  .gt-card.custom .gt-card__chip{ background: var(--warm-dim); color: var(--warm); }
+  .gt-card.custom .gt-card__more{ color: var(--warm); }
+
+  /* ---------- Detail sections: shared browser-frame mockup ---------- */
+  .detail-alt{ background: var(--bg-alt); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+  .detail-grid{ display:grid; grid-template-columns: 1fr 1fr; gap:44px; align-items:center; }
+  @media (max-width: 900px){ .detail-grid{ grid-template-columns: 1fr; } }
+  .detail-grid.reverse .mockup-col{ order:2; }
+  @media (max-width:900px){ .detail-grid.reverse .mockup-col{ order:0; } }
+  .detail-copy h2{ font-size: clamp(1.6rem,3vw,2.2rem); line-height:1.15; margin-bottom:14px; }
+  .detail-copy p{ color:var(--text-dim); font-size:.96rem; line-height:1.65; margin-bottom:18px; max-width:460px; }
+  .detail-list{ display:flex; flex-direction:column; gap:12px; margin-top:6px; }
+  .detail-list li{ list-style:none; display:flex; gap:10px; align-items:flex-start; font-size:.9rem; color:var(--text-dim); line-height:1.5; }
+  .detail-list li::before{ content:'✓'; color:var(--accent); font-weight:700; flex-shrink:0; margin-top:1px; }
+  .concept-flag{
+    display:inline-flex; align-items:center; gap:6px; font-family:'JetBrains Mono',monospace; font-size:10.5px;
+    color:var(--text-faint); border:1px solid var(--line-strong); padding:4px 10px; border-radius:20px; margin-top:16px;
+  }
+
+  .mockup-frame{
+    border:1px solid var(--line); border-radius:var(--radius-md); overflow:hidden; background:var(--surface);
+    box-shadow: var(--shadow);
+  }
+  .mockup-bar{ display:flex; align-items:center; gap:6px; padding:9px 12px; background:var(--surface-hi); border-bottom:1px solid var(--line); }
+  .mockup-bar .dot{ width:9px; height:9px; border-radius:50%; }
+  .mockup-bar .dot:nth-child(1){ background:#ef5f57; } .mockup-bar .dot:nth-child(2){ background:#f6bd51; } .mockup-bar .dot:nth-child(3){ background:#61c454; }
+  .mockup-bar .url{ margin-left:8px; font-family:'JetBrains Mono',monospace; font-size:10.5px; color:var(--text-dim); background:var(--bg); padding:3px 10px; border-radius:6px; flex:1; overflow:hidden; white-space:nowrap; }
+  .mockup-body{ padding:0; }
+
+  /* fake website mockup (Anchor Fitness Co.) */
+  .fw-nav{ display:flex; justify-content:space-between; align-items:center; padding:14px 18px; border-bottom:1px solid var(--line); }
+  .fw-logo{ font-weight:700; font-size:12px; font-family:'Space Grotesk',sans-serif; }
+  .fw-links{ display:flex; gap:14px; font-size:9.5px; color:var(--text-dim); }
+  .fw-hero{ padding:26px 18px; text-align:center; background:linear-gradient(160deg, var(--accent-dim), transparent); }
+  .fw-hero .h{ font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:17px; margin-bottom:6px; }
+  .fw-hero .s{ font-size:10px; color:var(--text-dim); margin-bottom:14px; }
+  .fw-hero .btns{ display:flex; gap:8px; justify-content:center; }
+  .fw-btn{ font-size:9px; font-weight:700; padding:7px 14px; border-radius:20px; background:var(--accent); color:var(--bg); }
+  .fw-btn.ghost{ background:transparent; border:1px solid var(--line-strong); color:var(--text); }
+  .fw-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:8px; padding:16px 18px; }
+  .fw-card{ background:var(--bg-alt); border-radius:8px; padding:10px; }
+  .fw-card .t{ font-size:8.5px; font-weight:700; margin-bottom:3px; }
+  .fw-card .d{ font-size:7.5px; color:var(--text-faint); }
+
+  /* fake store mockup (Lumé Skincare) */
+  .es-nav{ display:flex; justify-content:space-between; align-items:center; padding:14px 18px; border-bottom:1px solid var(--line); }
+  .es-cart{ font-size:9px; background:var(--warm-dim); color:var(--warm); padding:4px 9px; border-radius:20px; font-weight:700; }
+  .es-banner{ margin:14px 18px; border-radius:8px; padding:16px; background:linear-gradient(135deg, var(--warm-dim), var(--accent-dim)); }
+  .es-banner .t{ font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:13px; }
+  .es-banner .s{ font-size:9px; color:var(--text-dim); margin-top:3px; }
+  .es-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:10px; padding:4px 18px 18px; }
+  .es-prod{ background:var(--bg-alt); border-radius:8px; overflow:hidden; }
+  .es-prod .img{ height:52px; background:linear-gradient(160deg, var(--surface-hi), var(--bg-alt)); }
+  .es-prod .info{ padding:8px; }
+  .es-prod .name{ font-size:8px; font-weight:700; }
+  .es-prod .price{ font-size:8px; color:var(--accent); font-weight:700; margin-top:2px; }
+  .es-prod .add{ margin-top:6px; font-size:7px; text-align:center; padding:4px; border-radius:14px; background:var(--text); color:var(--bg); font-weight:700; }
+  .fw-stats{ display:flex; padding:0 18px 14px; }
+  .fw-stat{ flex:1; text-align:center; border-right:1px solid var(--line); }
+  .fw-stat:last-child{ border-right:none; }
+  .fw-stat .num{ font-size:13px; font-weight:700; font-family:'Space Grotesk',sans-serif; }
+  .fw-stat .lbl{ font-size:7px; color:var(--text-faint); margin-top:1px; text-transform:uppercase; letter-spacing:.3px; }
+  .fw-card__icon{ font-size:16px; margin-bottom:5px; }
+  .fw-pricing{ display:flex; gap:6px; padding:0 18px 16px; }
+  .fw-plan{ flex:1; background:var(--bg-alt); border-radius:8px; padding:8px 6px; text-align:center; border:1px solid var(--line); }
+  .fw-plan.pop{ border-color:var(--accent); background:var(--accent-dim); }
+  .fw-plan .t{ font-size:7px; font-weight:600; color:var(--text-faint); text-transform:uppercase; letter-spacing:.5px; }
+  .fw-plan .p{ font-size:15px; font-weight:700; font-family:'Space Grotesk',sans-serif; margin:2px 0 0; }
+  .fw-plan .per{ font-size:6.5px; color:var(--text-faint); }
+  .fw-plan .f{ font-size:6.5px; color:var(--text-dim); margin-top:3px; }
+  .fw-testimonial{ margin:0 18px 16px; padding:10px 12px; background:var(--bg-alt); border-radius:8px; border-left:3px solid var(--accent); }
+  .fw-tquote{ font-size:8px; font-style:italic; color:var(--text-dim); line-height:1.4; }
+  .fw-tname{ font-size:7px; color:var(--text-faint); margin-top:4px; }
+  .es-logo{ font-weight:800; font-size:13px; font-family:'Space Grotesk',sans-serif; letter-spacing:-.3px; }
+  .es-cat{ font-size:8px; color:var(--text-dim); cursor:pointer; }
+  .es-cat:hover{ color:var(--text); }
+  .es-cats{ display:flex; gap:6px; padding:0 18px 14px; }
+  .es-ctag{ font-size:7.5px; padding:4px 10px; border-radius:14px; background:var(--bg-alt); border:1px solid var(--line); color:var(--text-dim); }
+  .es-ctag:first-child{ background:var(--text); color:var(--bg); border-color:var(--text); }
+  .es-r{ font-size:7px; color:#e8a838; letter-spacing:.5px; margin-top:1px; }
+  .es-prod .os{ font-size:6.5px; color:var(--text-faint); text-decoration:line-through; margin-left:2px; }
+  .es-bcode{ font-size:8px; color:var(--warm); font-weight:700; font-family:'JetBrains Mono',monospace; margin-top:4px; }
+  .es-reviews{ padding:0 18px 14px; }
+  .es-rstars{ color:#e8a838; font-size:8px; letter-spacing:1px; }
+  .es-rtext{ font-size:7.5px; color:var(--text-dim); margin-top:2px; line-height:1.4; font-style:italic; }
+  .es-newsletter{ margin:0 18px 16px; padding:12px 14px; border-radius:8px; background:var(--surface-hi); text-align:center; }
+  .es-newsletter .t{ font-size:9px; font-weight:600; }
+  .es-newsletter .s{ font-size:7px; color:var(--text-faint); margin-top:2px; }
+  .es-nlinp{ display:flex; gap:4px; margin-top:8px; justify-content:center; }
+  .es-nlplace{ font-size:8px; padding:5px 10px; background:var(--bg); border-radius:6px; color:var(--text-faint); min-width:100px; }
+  .es-nlbtn{ font-size:10px; padding:5px 10px; background:var(--text); color:var(--bg); border-radius:6px; font-weight:700; }
+
+  /* ---------- Automation dashboard ---------- */
+  .kpi-row{ display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-bottom:20px; }
+  @media (max-width:560px){ .kpi-row{ grid-template-columns:1fr; } }
+  .kpi{ background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:16px 18px; }
+  .kpi .val{ font-size:24px; font-weight:800; font-family:'Space Grotesk',sans-serif; }
+  .kpi.before .val{ color:var(--bad); }
+  .kpi.after .val{ color:var(--accent); }
+  .kpi.delta .val{ color:var(--warm); }
+  .kpi .lbl{ font-size:11px; color:var(--text-dim); margin-top:3px; }
+  .chart-card{ background:var(--surface); border:1px solid var(--line); border-radius:var(--radius-md); padding:20px; box-shadow:var(--shadow); }
+  .chart-wrap{ position:relative; height:190px; margin-top:6px; }
+  .chart-wrap svg{ width:100%; height:100%; overflow:visible; }
+  .gridline{ stroke:var(--line); stroke-width:1; }
+  .axis-label{ font-size:9px; fill:var(--text-faint); font-family:'JetBrains Mono',monospace; }
+  .line-before{ fill:none; stroke:var(--bad); stroke-width:2.5; }
+  .line-after{ fill:none; stroke:var(--accent); stroke-width:2.5; }
+  .marker-line{ stroke:var(--line-strong); stroke-width:1.5; stroke-dasharray:4 4; }
+  .marker-label{ font-size:9.5px; fill:var(--text-dim); font-weight:600; font-family:'JetBrains Mono',monospace; }
+  .chart-legend{ display:flex; gap:16px; margin-top:12px; font-size:11px; color:var(--text-dim); }
+  .chart-legend span{ display:inline-flex; align-items:center; gap:6px; }
+  .sw{ width:9px; height:9px; border-radius:3px; }
+  .js-draw{ stroke-dasharray:600; stroke-dashoffset:600; animation: draw-line 1.4s ease forwards; }
+  @keyframes draw-line{ to{ stroke-dashoffset:0; } }
+  .real-shot-wrap{ margin-top:20px; }
+  .real-shot-wrap img{ width:100%; display:block; }
+  .real-shot-cap{ font-family:'JetBrains Mono',monospace; font-size:10.5px; color:var(--text-faint); padding:10px 4px 0; }
+
+  /* ---------- Custom work grid ---------- */
+  .custom-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:14px; }
+  @media (max-width:900px){ .custom-grid{ grid-template-columns:repeat(2,1fr); } }
+  @media (max-width:560px){ .custom-grid{ grid-template-columns:1fr; } }
+  .custom-item{ background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:18px; transition:transform .25s ease, border-color .25s ease; }
+  .custom-item:hover{ transform:translateY(-3px); border-color:var(--warm); }
+  .custom-item .ic{ width:30px; height:30px; border-radius:8px; background:var(--warm-dim); color:var(--warm); display:flex; align-items:center; justify-content:center; font-size:14px; margin-bottom:10px; font-family:'JetBrains Mono',monospace; }
+  .custom-item h4{ font-size:13.5px; margin-bottom:6px; }
+  .custom-item p{ font-size:11.5px; color:var(--text-dim); line-height:1.5; }
+  .custom-item .tool{ display:inline-block; margin-top:8px; font-family:'JetBrains Mono',monospace; font-size:9.5px; color:var(--text-faint); border:1px solid var(--line-strong); padding:2px 8px; border-radius:10px; }
+
+  /* ---------- FAQ ---------- */
+  .faq-list{ max-width:720px; }
+  .faq-item{ border-bottom:1px solid var(--line); padding:16px 0; cursor:pointer; }
+  .faq-q{ display:flex; justify-content:space-between; align-items:center; gap:16px; font-weight:700; font-size:14.5px; }
+  .faq-a{ max-height:0; overflow:hidden; transition:max-height .3s ease; font-size:13px; color:var(--text-dim); line-height:1.6; }
+  .faq-item.open .faq-a{ max-height:160px; padding-top:10px; }
+  .faq-item .plus{ transition:transform .3s ease; color:var(--accent); font-size:17px; flex-shrink:0; }
+  .faq-item.open .plus{ transform:rotate(45deg); }
+
+  /* ---------- Quote form ---------- */
+  .quote{ border-top: 1px solid var(--line); }
+  .quote-inner{
+    display:grid; grid-template-columns: 0.85fr 1.15fr; gap: 48px;
+    background: var(--surface); border:1px solid var(--line); border-radius: var(--radius-lg);
+    padding: 48px; box-shadow: var(--shadow);
+  }
+  @media (max-width: 860px){ .quote-inner{ grid-template-columns: 1fr; padding: 32px 24px; gap: 30px; } }
+  .quote-copy h2{ font-size: clamp(1.6rem,3.2vw,2.1rem); line-height:1.15; margin-bottom: 14px; }
+  .quote-copy p{ color: var(--text-dim); font-size: .95rem; line-height:1.6; max-width: 360px; }
+  .quote-copy .live-dot{ display:inline-block; margin-right:8px; }
+  .quote-copy .status-line{ margin-top: 26px; display:flex; align-items:center; font-family:'JetBrains Mono',monospace; font-size:12px; color: var(--text-faint); text-transform:uppercase; letter-spacing:.08em; }
+
+  .quote-form{ display:flex; flex-direction:column; gap: 16px; }
+  .field{ display:flex; flex-direction:column; gap: 8px; }
+  .field label{ font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.08em; text-transform:uppercase; color: var(--text-faint); }
+  .field input, .field textarea{
+    background: var(--bg-alt); border: 1px solid var(--line-strong); border-radius: var(--radius-sm);
+    padding: 13px 14px; color: var(--text); font-family:'Manrope',sans-serif; font-size: .95rem;
+    outline: none; transition: border-color .25s ease, box-shadow .25s ease;
+  }
+  .field textarea{ resize: vertical; min-height: 96px; font-family: 'Manrope',sans-serif; }
+  .field input:focus, .field textarea:focus{ border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-dim); }
+  .field input::placeholder, .field textarea::placeholder{ color: var(--text-faint); }
+  .quote-form .button{ align-self: flex-start; margin-top: 4px; }
+  .quote-form .button:disabled{ opacity: .6; cursor: not-allowed; transform:none; box-shadow:none; }
+  .form-note{ font-size: .78rem; color: var(--text-faint); margin-top: -4px; }
+
+
+  .contact{ background: var(--bg-alt); border-top:1px solid var(--line); }
+  .contact-head{ max-width: 560px; margin-bottom: 48px; }
+  .contact-head h2{ font-size: clamp(1.7rem,3.4vw,2.4rem); line-height:1.15; }
+  .contact-grid{ display:grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+  @media (max-width: 700px){ .contact-grid{ grid-template-columns: 1fr; } }
+  .contact-card{
+    display:block; background: var(--surface); border:1px solid var(--line); border-radius: var(--radius-lg);
+    padding: 32px; transition: transform .3s ease, border-color .3s ease, box-shadow .3s ease;
+  }
+  .contact-card:hover{ transform: translateY(-4px); border-color: var(--accent); box-shadow: var(--shadow); }
+  .contact-card__top{ display:flex; align-items:center; gap:10px; margin-bottom: 22px; }
+  .live-dot{ width:8px; height:8px; border-radius:50%; background: var(--accent); box-shadow: 0 0 0 4px var(--accent-dim); animation: dot-pulse 2.2s ease-in-out infinite; }
+  .contact-card__label{ font-family:'JetBrains Mono',monospace; font-size:12px; text-transform:uppercase; letter-spacing:.1em; color: var(--text-faint); }
+  .contact-card__value{ font-size: clamp(1.3rem,3vw,1.6rem); font-family:'Space Grotesk',sans-serif; font-weight:600; margin-bottom: 10px; word-break: break-word; }
+  .contact-card__sub{ color: var(--text-dim); font-size:.92rem; }
+  .contact-card__arrow{ margin-top: 22px; width:34px; height:34px; border-radius:50%; border:1px solid var(--line-strong); display:flex; align-items:center; justify-content:center; transition: background .3s ease, transform .3s ease; }
+  .contact-card__arrow svg{ width:16px; height:16px; transition: transform .3s ease; }
+  .contact-card:hover .contact-card__arrow{ background: var(--accent); border-color: var(--accent); }
+  .contact-card:hover .contact-card__arrow svg{ transform: translateX(2px); color: var(--bg); }
+
+  /* ---------- Terms ---------- */
+  .terms-section{ border-top:1px solid var(--line); background:var(--bg-alt); padding:60px 0; }
+  .terms-section h2{ font-size:clamp(1.3rem,2.6vw,1.8rem); margin-bottom:24px; }
+  .terms-body{ max-width:800px; font-size:.88rem; color:var(--text-dim); line-height:1.7; }
+  .terms-body h3{ font-family:'Space Grotesk',sans-serif; font-size:1rem; color:var(--text); margin:22px 0 8px; }
+  .terms-body p{ margin-bottom:10px; }
+  .terms-body ul{ padding-left:20px; margin-bottom:10px; }
+  .terms-body ul li{ margin-bottom:4px; }
+
+  /* ---------- Footer ---------- */
+  footer{ padding: 40px 0; }
+  .footer-row{ display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap: 14px; }
+  .footer-brand{ font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:1rem; }
+  .footer-meta{ color: var(--text-faint); font-size:.85rem; font-family:'JetBrains Mono',monospace; }
+  .footer-links{ display:flex; gap:16px; font-size:.82rem; color:var(--text-dim); }
+</style>
+</head>
+<body>
+
+<div id="loader">
+  <div class="loader">
+    <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+  </div>
+</div>
+
+<nav class="navbar">
+  <div class="nav-brand">
+    <svg viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="var(--text)"/><g fill="none" stroke="var(--bg)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"><path d="M10 20 L20 44 L28 30"/><path d="M28 30 L36 44 L54 16"/></g><circle cx="54" cy="16" r="4" fill="var(--bg)"/></svg>
+    Weblify
+  </div>
+  <div class="cir-tabs" role="tablist">
+    <a class="cir-tabs__t" href="#home" data-section="home">Home</a>
+    <a class="cir-tabs__t" href="#services" data-section="services">Services</a>
+    <a class="cir-tabs__t" href="#automation" data-section="automation">Automation</a>
+    <a class="cir-tabs__t" href="#custom-work" data-section="custom-work">Custom</a>
+    <a class="cir-tabs__t" href="#contact" data-section="contact">Contact</a>
+  </div>
+  <div class="nav-right">
+    <label class="switch">
+      <span class="sun"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="#ffd43b"><circle r="5" cy="12" cx="12"></circle><path d="m21 13h-1a1 1 0 0 1 0-2h1a1 1 0 0 1 0 2zm-17 0h-1a1 1 0 0 1 0-2h1a1 1 0 0 1 0 2zm13.66-5.66a1 1 0 0 1 -.66-.29 1 1 0 0 1 0-1.41l.71-.71a1 1 0 1 1 1.41 1.41l-.71.71a1 1 0 0 1 -.75.29zm-12.02 12.02a1 1 0 0 1 -.71-.29 1 1 0 0 1 0-1.41l.71-.66a1 1 0 0 1 1.41 1.41l-.71.71a1 1 0 0 1 -.7.24zm6.36-14.36a1 1 0 0 1 -1-1v-1a1 1 0 0 1 2 0v1a1 1 0 0 1 -1 1zm0 17a1 1 0 0 1 -1-1v-1a1 1 0 0 1 2 0v1a1 1 0 0 1 -1 1zm-5.66-14.66a1 1 0 0 1 -.7-.29l-.71-.71a1 1 0 0 1 1.41-1.41l.71.71a1 1 0 0 1 0 1.41 1 1 0 0 1 -.71.29zm12.02 12.02a1 1 0 0 1 -.7-.29l-.66-.71a1 1 0 0 1 1.36-1.36l.71.71a1 1 0 0 1 0 1.41 1 1 0 0 1 -.71.24z"></path></g></svg></span>
+      <span class="moon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="m223.5 32c-123.5 0-223.5 100.3-223.5 224s100 224 223.5 224c60.6 0 115.5-24.2 155.8-63.4 5-4.9 6.3-12.5 3.1-18.7s-10.1-9.7-17-8.5c-9.8 1.7-19.8 2.6-30.1 2.6-96.9 0-175.5-78.8-175.5-176 0-65.8 36-123.1 89.3-153.3 6.1-3.5 9.2-10.5 7.7-17.3s-7.3-11.9-14.3-12.5c-6.3-.5-12.6-.8-19-.8z"></path></svg></span>
+      <input type="checkbox" class="input" id="themeInput">
+      <span class="slider"></span>
+    </label>
+    <a href="#quote" class="button nav-cta">Get a quote</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-bg">
+    <svg viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice">
+      <g stroke="var(--accent)" stroke-width="1" fill="none" opacity="0.5">
+        <path id="p1" d="M -100 620 C 200 560, 380 700, 650 560 S 1050 480, 1320 540" stroke-dasharray="6 10">
+          <animate attributeName="stroke-dashoffset" from="0" to="-160" dur="7s" repeatCount="indefinite"/>
+        </path>
+        <path id="p2" d="M -100 180 C 250 260, 420 100, 700 200 S 1080 300, 1320 160" stroke-dasharray="4 9">
+          <animate attributeName="stroke-dashoffset" from="0" to="130" dur="9s" repeatCount="indefinite"/>
+        </path>
+      </g>
+      <g fill="var(--accent)">
+        <circle r="3">
+          <animateMotion dur="16s" repeatCount="indefinite" path="M -100 620 C 200 560, 380 700, 650 560 S 1050 480, 1320 540"/>
+          <animate attributeName="opacity" values="0.2;1;0.2" dur="3.4s" repeatCount="indefinite"/>
+        </circle>
+        <circle r="3.5">
+          <animateMotion dur="22s" repeatCount="indefinite" begin="-6s" path="M -100 620 C 200 560, 380 700, 650 560 S 1050 480, 1320 540"/>
+          <animate attributeName="opacity" values="1;0.2;1" dur="4.1s" repeatCount="indefinite"/>
+        </circle>
+        <circle r="3">
+          <animateMotion dur="19s" repeatCount="indefinite" begin="-11s" path="M -100 620 C 200 560, 380 700, 650 560 S 1050 480, 1320 540"/>
+          <animate attributeName="opacity" values="0.3;1;0.3" dur="2.8s" repeatCount="indefinite"/>
+        </circle>
+        <circle r="3">
+          <animateMotion dur="18s" repeatCount="indefinite" path="M -100 180 C 250 260, 420 100, 700 200 S 1080 300, 1320 160"/>
+          <animate attributeName="opacity" values="0.2;1;0.2" dur="3.8s" repeatCount="indefinite"/>
+        </circle>
+        <circle r="3.5">
+          <animateMotion dur="24s" repeatCount="indefinite" begin="-8s" path="M -100 180 C 250 260, 420 100, 700 200 S 1080 300, 1320 160"/>
+          <animate attributeName="opacity" values="1;0.3;1" dur="3.1s" repeatCount="indefinite"/>
+        </circle>
+        <circle r="3">
+          <animateMotion dur="20s" repeatCount="indefinite" begin="-14s" path="M -100 180 C 250 260, 420 100, 700 200 S 1080 300, 1320 160"/>
+          <animate attributeName="opacity" values="0.2;1;0.2" dur="4.6s" repeatCount="indefinite"/>
+        </circle>
+      </g>
+    </svg>
+  </div>
+
+  <div class="wrap hero-content">
+    <div class="hero-grid">
+      <div>
+        <div class="eyebrow">Weblify · Web &amp; Automation Studio</div>
+        <h1 class="hero-word"><p data-line="1">Weblify Designs</p></h1>
+        <p class="hero-tagline">Websites and automations built to work while you don't.</p>
+        <div class="cta-row">
+          <a class="button" href="https://wa.me/27824255805" target="_blank" rel="noopener">
+            WhatsApp Us
+            <svg fill="currentColor" viewBox="0 0 24 24" class="icon"><path clip-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm4.28 10.28a.75.75 0 000-1.06l-3-3a.75.75 0 10-1.06 1.06l1.72 1.72H8.25a.75.75 0 000 1.5h5.69l-1.72 1.72a.75.75 0 101.06 1.06l3-3z" fill-rule="evenodd"></path></svg>
+          </a>
+          <a class="button ghost" href="mailto:business.weblify@gmail.com">
+            Email Us
+            <svg fill="currentColor" viewBox="0 0 24 24" class="icon"><path clip-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm4.28 10.28a.75.75 0 000-1.06l-3-3a.75.75 0 10-1.06 1.06l1.72 1.72H8.25a.75.75 0 000 1.5h5.69l-1.72 1.72a.75.75 0 101.06 1.06l3-3z" fill-rule="evenodd"></path></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-illustration" aria-hidden="true">
+        <svg viewBox="0 0 400 360" fill="none">
+          <rect x="30" y="30" width="270" height="190" rx="10" stroke="var(--line-strong)" stroke-width="2"/>
+          <rect x="30" y="30" width="270" height="34" rx="10" stroke="var(--line-strong)" stroke-width="2" fill="var(--surface)"/>
+          <circle cx="50" cy="47" r="4" fill="var(--warm)"/>
+          <circle cx="65" cy="47" r="4" fill="var(--accent)"/>
+          <circle cx="80" cy="47" r="4" fill="var(--text-faint)"/>
+          <rect x="52" y="84" width="120" height="10" rx="5" fill="var(--accent-dim)"/>
+          <rect x="52" y="104" width="190" height="8" rx="4" fill="var(--line-strong)"/>
+          <rect x="52" y="120" width="150" height="8" rx="4" fill="var(--line)"/>
+          <rect x="52" y="146" width="70" height="26" rx="13" fill="var(--accent)"/>
+          <rect x="132" y="146" width="70" height="26" rx="13" fill="none" stroke="var(--line-strong)" stroke-width="2"/>
+          <path d="M 300 125 C 335 125, 335 90, 365 90" stroke="var(--accent)" stroke-width="2" stroke-dasharray="4 6" fill="none">
+            <animate attributeName="stroke-dashoffset" from="0" to="-40" dur="3s" repeatCount="indefinite"/>
+          </path>
+          <circle cx="365" cy="90" r="16" fill="var(--surface)" stroke="var(--accent)" stroke-width="2"/>
+          <path d="M 358 90 l 5 5 l 9 -11" stroke="var(--accent)" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M 300 165 C 330 165, 330 210, 300 235" stroke="var(--accent)" stroke-width="2" stroke-dasharray="4 6" fill="none">
+            <animate attributeName="stroke-dashoffset" from="0" to="-40" dur="3.6s" repeatCount="indefinite"/>
+          </path>
+          <rect x="215" y="235" width="130" height="70" rx="14" fill="var(--surface)" stroke="var(--line-strong)" stroke-width="2"/>
+          <circle cx="245" cy="270" r="4" fill="var(--accent)"><animate attributeName="opacity" values="1;0.3;1" dur="1.6s" repeatCount="indefinite"/></circle>
+          <circle cx="262" cy="270" r="4" fill="var(--accent)"><animate attributeName="opacity" values="0.3;1;0.3" dur="1.6s" repeatCount="indefinite" begin="0.2s"/></circle>
+          <circle cx="279" cy="270" r="4" fill="var(--accent)"><animate attributeName="opacity" values="1;0.3;1" dur="1.6s" repeatCount="indefinite" begin="0.4s"/></circle>
+          <circle cx="60" cy="270" r="3" fill="var(--accent)" opacity="0.5"/>
+          <circle cx="80" cy="290" r="2.5" fill="var(--accent)" opacity="0.35"/>
+          <circle cx="45" cy="300" r="2" fill="var(--accent)" opacity="0.25"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <div class="scroll-cue"><span class="dash"></span> Scroll</div>
+</section>
+
+<!-- WHY -->
+<section class="why">
+  <div class="wrap">
+    <div class="why-head reveal">
+      <div class="eyebrow">Why Weblify</div>
+      <h2>An agency that treats your site like infrastructure, not a brochure.</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-item reveal">
+        <span class="why-num mono">01</span>
+        <h3>Built, not templated</h3>
+        <p>Every project is designed from scratch for your business — no drag-and-drop themes wearing your logo.</p>
+      </div>
+      <div class="why-item reveal">
+        <span class="why-num mono">02</span>
+        <h3>Shipped fast</h3>
+        <p>You get a working site and working automations in weeks, not a scope document that drags on for months.</p>
+      </div>
+      <div class="why-item reveal">
+        <span class="why-num mono">03</span>
+        <h3>Automation-first</h3>
+        <p>Your site isn't just a page — it's wired to capture leads and follow up on its own, from day one.</p>
+      </div>
+      <div class="why-item reveal">
+        <span class="why-num mono">04</span>
+        <h3>Support after launch</h3>
+        <p>Going live isn't the finish line. We stay involved to fix, tune and extend what we've built.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES (overview cards) -->
+<section id="services">
+  <div class="wrap">
+    <div class="services-head reveal">
+      <h2>What we build</h2>
+      <p style="color:var(--text-dim); max-width:380px; font-size:.95rem;">Four ways to work with us — pick a lane, or bring us something that doesn't fit one.</p>
+    </div>
+
+    <div class="services-grid">
+      <article class="gt-card reveal" tabindex="0">
+        <header class="gt-card__head">
+          <span class="gt-card__eyebrow mono">// 01</span>
+          <span class="gt-card__chip">WEB</span>
+        </header>
+        <div class="gt-card__icon">
+          <svg viewBox="0 0 48 48" fill="none">
+            <rect x="6" y="9" width="36" height="30" rx="4" stroke="var(--accent)" stroke-width="2"/>
+            <line x1="6" y1="18" x2="42" y2="18" stroke="var(--accent)" stroke-width="2"/>
+            <circle cx="12" cy="13.5" r="1.6" fill="var(--accent)"/>
+            <circle cx="17" cy="13.5" r="1.6" fill="var(--accent)"/>
+            <rect x="12" y="24" width="14" height="4" rx="2" fill="var(--accent-dim)"/>
+            <rect x="12" y="31" width="20" height="3" rx="1.5" fill="var(--line-strong)"/>
+          </svg>
+        </div>
+        <h3 class="gt-card__title">Website Building</h3>
+        <span class="gt-card__tagline">A site that works as hard as you do</span>
+        <p class="gt-card__body">Fast, custom-built websites that look sharp on every screen and are structured to actually bring in enquiries — mobile-first, SEO-ready from day one.</p>
+        <footer class="gt-card__foot">
+          <span class="gt-card__status"><span class="gt-card__dot"></span>Available</span>
+          <a class="gt-card__more" href="#web-building">See how it's built →</a>
+        </footer>
+      </article>
+
+      <article class="gt-card reveal" tabindex="0">
+        <header class="gt-card__head">
+          <span class="gt-card__eyebrow mono">// 02</span>
+          <span class="gt-card__chip">STORE</span>
+        </header>
+        <div class="gt-card__icon">
+          <svg viewBox="0 0 48 48" fill="none">
+            <path d="M13 17 L16 9 H32 L35 17" stroke="var(--accent)" stroke-width="2" stroke-linejoin="round"/>
+            <rect x="10" y="17" width="28" height="22" rx="3" stroke="var(--accent)" stroke-width="2"/>
+            <circle cx="20" cy="17" r="2" fill="var(--bg)" stroke="var(--accent)" stroke-width="1.6"/>
+            <circle cx="28" cy="17" r="2" fill="var(--bg)" stroke="var(--accent)" stroke-width="1.6"/>
+            <rect x="16" y="26" width="16" height="4" rx="2" fill="var(--accent-dim)"/>
+          </svg>
+        </div>
+        <h3 class="gt-card__title">E-commerce Stores</h3>
+        <span class="gt-card__tagline">Your storefront, open 24/7</span>
+        <p class="gt-card__body">Online stores built to convert — from product pages to checkout — with payments, inventory and order flow set up to scale as you grow.</p>
+        <footer class="gt-card__foot">
+          <span class="gt-card__status"><span class="gt-card__dot"></span>Available</span>
+          <a class="gt-card__more" href="#ecommerce">See how it's built →</a>
+        </footer>
+      </article>
+
+      <article class="gt-card reveal" tabindex="0">
+        <header class="gt-card__head">
+          <span class="gt-card__eyebrow mono">// 03</span>
+          <span class="gt-card__chip">AI</span>
+        </header>
+        <div class="gt-card__icon">
+          <svg viewBox="0 0 48 48" fill="none">
+            <rect x="16" y="16" width="16" height="16" rx="3" stroke="var(--accent)" stroke-width="2"/>
+            <circle cx="24" cy="24" r="3" fill="var(--accent-dim)" stroke="var(--accent)" stroke-width="1.4"/>
+            <line x1="24" y1="6" x2="24" y2="16" stroke="var(--accent)" stroke-width="2"/>
+            <line x1="24" y1="32" x2="24" y2="42" stroke="var(--accent)" stroke-width="2"/>
+            <line x1="6" y1="24" x2="16" y2="24" stroke="var(--accent)" stroke-width="2"/>
+            <line x1="32" y1="24" x2="42" y2="24" stroke="var(--accent)" stroke-width="2"/>
+            <circle cx="24" cy="6" r="2" fill="var(--accent)"/>
+            <circle cx="24" cy="42" r="2" fill="var(--accent)"/>
+            <circle cx="6" cy="24" r="2" fill="var(--accent)"/>
+            <circle cx="42" cy="24" r="2" fill="var(--accent)"/>
+          </svg>
+        </div>
+        <h3 class="gt-card__title">AI Automation</h3>
+        <span class="gt-card__tagline">Let the busywork run itself</span>
+        <p class="gt-card__body">Automations that capture leads, answer common questions and keep your pipeline moving — WhatsApp, email and tool integrations included.</p>
+        <footer class="gt-card__foot">
+          <span class="gt-card__status"><span class="gt-card__dot"></span>Available</span>
+          <a class="gt-card__more" href="#automation">See the dashboard →</a>
+        </footer>
+      </article>
+
+      <article class="gt-card custom reveal" tabindex="0">
+        <header class="gt-card__head">
+          <span class="gt-card__eyebrow mono">// 04</span>
+          <span class="gt-card__chip">CUSTOM</span>
+        </header>
+        <div class="gt-card__icon">
+          <svg viewBox="0 0 48 48" fill="none">
+            <circle cx="24" cy="24" r="17" stroke="var(--warm)" stroke-width="2" stroke-dasharray="5 5"/>
+            <line x1="24" y1="16" x2="24" y2="32" stroke="var(--warm)" stroke-width="2.4" stroke-linecap="round"/>
+            <line x1="16" y1="24" x2="32" y2="24" stroke="var(--warm)" stroke-width="2.4" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3 class="gt-card__title">Custom Requests</h3>
+        <span class="gt-card__tagline">Got something else in mind?</span>
+        <p class="gt-card__body">Not every project fits neatly into a box — ad campaigns, integrations, one-off builds. Ask, and we'll tell you straight if we can help.</p>
+        <footer class="gt-card__foot">
+          <span class="gt-card__status"><span class="gt-card__dot"></span>Ask us</span>
+          <a class="gt-card__more" href="#custom-work">See examples →</a>
+        </footer>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- WEBSITE BUILDING DETAIL -->
+<section id="web-building" class="detail-alt">
+  <div class="wrap">
+    <div class="detail-grid reveal">
+      <div class="detail-copy">
+        <div class="eyebrow">01 — Website Building</div>
+        <h2>A fake site, built the same way a real one would be.</h2>
+        <p>This is a concept mockup — "Anchor Fitness Co." — showing the actual structure we build with: a clear hero, a real call to action above the fold, and a scannable grid instead of a wall of text.</p>
+        <ul class="detail-list">
+          <li>Mobile-first layout, tested down to a 320px screen before it's called done</li>
+          <li>Structured HTML and metadata so the site is readable by search engines and AI assistants, not just people</li>
+          <li>Booking/contact CTA wired to WhatsApp or email from day one, no missed enquiries</li>
+          <li>Built and launched in days, not months</li>
+        </ul>
+        <span class="concept-flag">◆ Concept mockup — illustrative, not a live client site</span>
+      </div>
+      <div class="mockup-col">
+        <div class="mockup-frame">
+          <div class="mockup-bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="url">anchorfitness.example</span></div>
+          <div class="mockup-body">
+            <div class="fw-nav"><span class="fw-logo">ANCHOR FITNESS CO.</span><span class="fw-links"><span>Classes</span><span>Coaches</span><span>Pricing</span><span>Join</span></span></div>
+            <div class="fw-hero">
+              <div class="h">Train with people who show up.</div>
+              <div class="s">Small-group strength & conditioning, three locations across the city.</div>
+              <div class="btns"><span class="fw-btn">Book a free class →</span><span class="fw-btn ghost">View schedule</span></div>
+            </div>
+            <div class="fw-stats"><div class="fw-stat"><div class="num">1 200+</div><div class="lbl">Members</div></div><div class="fw-stat"><div class="num">3</div><div class="lbl">Locations</div></div><div class="fw-stat"><div class="num">4.9★</div><div class="lbl">Avg Rating</div></div><div class="fw-stat"><div class="num">65</div><div class="lbl">Weekly Classes</div></div></div>
+            <div class="fw-grid">
+              <div class="fw-card"><div class="fw-card__icon">🏋️</div><div class="t">Strength Training</div><div class="d">45-min coached sessions. Build real strength with proper form.</div></div>
+              <div class="fw-card"><div class="fw-card__icon">⚡</div><div class="t">HIIT Conditioning</div><div class="d">High-intensity intervals. Max results in minimum time.</div></div>
+              <div class="fw-card"><div class="fw-card__icon">🧘</div><div class="t">Mobility & Recovery</div><div class="d">Prevent injury, move better, recover faster between sessions.</div></div>
+            </div>
+            <div class="fw-pricing"><div class="fw-plan"><div class="t">Casual</div><div class="p">R180</div><div class="per">/class</div><div class="f">No commitment, just show up</div></div><div class="fw-plan pop"><div class="t">Monthly</div><div class="p">R650</div><div class="per">/month</div><div class="f">Unlimited classes & coaching</div></div><div class="fw-plan"><div class="t">Annual</div><div class="p">R450</div><div class="per">/month</div><div class="f">Billed yearly • 2 months free</div></div></div>
+            <div class="fw-testimonial"><div class="fw-tquote">"Best decision I've made for my health. The coaches actually care about your progress."</div><div class="fw-tname">— Sarah M., member since 2024</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- E-COMMERCE DETAIL -->
+<section id="ecommerce">
+  <div class="wrap">
+    <div class="detail-grid reverse reveal">
+      <div class="detail-copy">
+        <div class="eyebrow">02 — E-commerce Stores</div>
+        <h2>A storefront that sells while you sleep.</h2>
+        <p>"Lumé Skincare" — a concept store mockup — showing what a conversion-ready product grid looks like, paired with the automation layer most agencies skip.</p>
+        <ul class="detail-list">
+          <li>Fast checkout flow, built to reduce cart abandonment, not just look nice</li>
+          <li>Automated order confirmations and shipping updates sent via WhatsApp, not just buried in email</li>
+          <li>Low-stock and reorder alerts, so you're never caught out</li>
+          <li>Abandoned-cart follow-up automation — recovering sales that would otherwise just disappear</li>
+        </ul>
+        <span class="concept-flag">◆ Concept mockup — illustrative, not a live client store</span>
+      </div>
+      <div class="mockup-col">
+        <div class="mockup-frame">
+          <div class="mockup-bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="url">shop.lumeskincare.example</span></div>
+          <div class="mockup-body">
+            <div class="es-nav"><span class="es-logo">LUMÉ</span><span class="es-cat">Serums</span><span class="es-cat">Moisturisers</span><span class="es-cat">Cleansers</span><span class="es-cart">🛒 3</span></div>
+            <div class="es-banner"><div class="t">Weekend Flash Sale</div><div class="s">Up to 25% off all bundles — use code <strong>GLOW25</strong></div></div>
+            <div class="es-cats"><span class="es-ctag">Best Sellers</span><span class="es-ctag">New Arrivals</span><span class="es-ctag">Sale</span><span class="es-ctag">Gift Sets</span></div>
+            <div class="es-grid">
+              <div class="es-prod"><div class="img"></div><div class="info"><div class="name">Vitamin C Serum</div><div class="es-r">★★★★★</div><div class="price">R380 <span class="os">R420</span></div><div class="add">Add to cart</div></div></div>
+              <div class="es-prod"><div class="img"></div><div class="info"><div class="name">Overnight Night Cream</div><div class="es-r">★★★★½</div><div class="price">R420</div><div class="add">Add to cart</div></div></div>
+              <div class="es-prod"><div class="img"></div><div class="info"><div class="name">Gentle Foaming Cleanser</div><div class="es-r">★★★★★</div><div class="price">R260 <span class="os">R310</span></div><div class="add">Add to cart</div></div></div>
+            </div>
+            <div class="es-reviews"><div class="es-rstars">★★★★★</div><div class="es-rtext">"My skin has never looked this good. The Vitamin C serum is a game-changer." — Priya K.</div></div>
+            <div class="es-newsletter"><div class="t">Get 10% off your first order</div><div class="s">Subscribe for new drops, tips & exclusive offers</div><div class="es-nlinp"><span class="es-nlplace">your@email.com</span><span class="es-nlbtn">→</span></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AUTOMATION DASHBOARD -->
+<section id="automation" class="detail-alt">
+  <div class="wrap">
+    <div class="reveal" style="margin-bottom:40px;">
+      <div class="eyebrow">03 — AI Automation</div>
+      <h2 style="font-size:clamp(1.6rem,3vw,2.2rem);">The dashboard behind the busywork disappearing.</h2>
+      <p style="color:var(--text-dim); font-size:.96rem; max-width:560px; margin-top:12px;">This is a real workflow from Weblify's own lead-generation pipeline — not a mockup. Below it: what changes when a business switches from manual lead-hunting to this running on a schedule.</p>
+    </div>
+
+    <div class="reveal" style="margin-bottom:24px;">
+      <div class="kpi-row">
+        <div class="kpi before"><div class="val">8.5 hrs</div><div class="lbl">/week finding leads, before automation</div></div>
+        <div class="kpi after"><div class="val">1.2 hrs</div><div class="lbl">/week reviewing AI-qualified leads, after</div></div>
+        <div class="kpi delta"><div class="val">−86%</div><div class="lbl">time reclaimed weekly</div></div>
+      </div>
+
+      <div class="chart-card">
+        <div class="mono" style="font-size:11px; color:var(--text-dim); margin-bottom:4px;">Hours/week spent sourcing & qualifying leads</div>
+        <div class="chart-wrap">
+          <svg viewBox="0 0 640 190" preserveAspectRatio="none" id="autoChart">
+            <line class="gridline" x1="36" y1="10" x2="36" y2="155"/>
+            <line class="gridline" x1="36" y1="155" x2="620" y2="155"/>
+            <text class="axis-label" x="6" y="28">10h</text>
+            <text class="axis-label" x="10" y="90">5h</text>
+            <text class="axis-label" x="16" y="159">0h</text>
+            <line class="marker-line" x1="330" y1="10" x2="330" y2="155"/>
+            <text class="marker-label" x="336" y="24">Automation launched</text>
+            <path class="line-before js-draw" d="M36,40 L110,44 L180,37 L250,48 L330,42"/>
+            <path class="line-after js-draw" style="animation-delay:.3s;" d="M330,42 L400,120 L470,138 L540,141 L610,140"/>
+            <text class="axis-label" x="26" y="172">-4wk</text>
+            <text class="axis-label" x="170" y="172">-2wk</text>
+            <text class="axis-label" x="316" y="172">Launch</text>
+            <text class="axis-label" x="455" y="172">+4wk</text>
+            <text class="axis-label" x="595" y="172">+8wk</text>
+          </svg>
+        </div>
+        <div class="chart-legend">
+          <span><span class="sw" style="background:var(--bad);"></span>Before automation</span>
+          <span><span class="sw" style="background:var(--accent);"></span>After automation</span>
+          <span style="opacity:.6;">Illustrative figures</span>
+        </div>
+
+        <div class="real-shot-wrap">
+          <div class="mockup-frame">
+            <div class="mockup-bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="url">n8n.weblifydesigns.co.za / AI Lead Generator</span></div>
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAB1EAAANGCAIAAAAj7eBcAAAQAElEQVR4AeydC0BUVf7Hz4gwyGMQBUUZtSS1sEg2UTbbSNlIMVKUzGJNxTJxfZBLqWlUFpnJmoarLRn5SDNT0SgyS4v+afhoMUsqDXfVMV8oOvJwROT/vfcOM5e5D+E6IOBvPHPn3N/3/H7nnM8991zmcL206E4vItDsCPS7775m1yfqEBEgAkSACBABIkAEiAARIAJE4LoIkDMRIAJNiMCf/vSnJtRaamojJNCC0YsIEAEiQASIABEgAkTgZiVA/SYCRIAIEAEiQASIABEgAkSg+RGgNd/md0ypR0TgegmQPxEgAkSACBABIkAEiAARIAJEgAgQASLQ/AlQD5svAVrzbb7HlnpGBIgAESACRIAIEAEiQASIABGoKwEqTwSIABEgAkSACDR9ArTm2/SPIfWACBABIkAEiEB9E6D4RIAIEAEiQASIABEgAkSACBABItB0CNCab9M5Vo2tpdQeIkAEiAARIAJEgAgQASJABIgAESACRKD5E6AeEgEi0PQI0Jpv0ztm1GIiQASIABEgAkSACBABInCjCVD9RIAIEAEiQASIABEgAo2XAK35Nt5jQy0jAkSACDQ1AtReIkAEiAARIAJEgAgQASJABIgAESACRODGE6jvNd8b30NqAREgAkSACBABIkAEiAARIAJEgAgQASJQ3wQoPhEgAkSACDQeArTm23iOBbWECBABIkAEiAARIALNjQD1hwgQASJABIgAESACRIAIEIGGJ0Brvg3PnGokAjc7Aeo/ESACRIAIEAEiQASIABEgAkSACBABItD8CVAPbxwBWvO9ceypZiJABIgAESACRIAIEAEiQASIwM1GgPpLBIgAESACRIAI1D8BWvOtf8ZUAxEgAkSACBABIqBOgFQiQASIABEgAkSACBABIkAEiAARcB4BWvN1HkuK5FwCFI0IEAEiQASIABEgAkSACBABIkAEiAARaP4EqIdEgAg4nwCt+TqfKUUkAkSACBABIkAEiAARIAJE4PoIkDcRIAJEgAgQASJABIiAdgK05qudHXkSASJABIhAwxKg2ogAESACRIAIEAEiQASIABEgAkSACBCBaxO48Wu+CW27v9D+7nRjeLTBeO32OpagfSJABIgAESACRIAIEAEiQASIABEgAkSg+ROgHhIBIkAEiEDtCdzgNV8s9Sa06YbV3tBWbbHy+/EtA2rfdCpJBIgAESACRIAIEAEicJMToO4TASJABIgAESACRIAIEAEiICVwI9d8sciLpd4TFeWZ5w4hIdPBtRWM0laSpQEI3HrrrQMGDIiKirr77rvru7o+ffoMrH7NmDGjOuv4iWL13RKK3ywJUKeIABEgAkSACBABIkAEiAARaAYE9O7urX19/du1o9TwBEAe/Bm9iEAjJ0DNUybQQGu+HVxbJbTtnm4MF6do/mEOr5/6MfPsQSRk0M7QVm2xpdSQBB599NFPPvlky5YtS5cuTU9PX7du3Z49e55//nlPT8/6aMb8+fNXrVq1qPo1duzY6qzjJ4qhcH20gWISASJABIgAESACRIAIEAEi0DwJUK+aCwEvLy8PD4/ysrKiM2fOnD5NCQe2wSCAOciDP44C6qVEBIhAUyTQEGu+WMb9+JYBCW26ISNODrxOXimDBavD2FIaNmzY5MmTG4DDW2+99dprrwUEBHzwwQczZsyYNm0aVl6PHj06bty4zZs3O/2e3z59+jzyyCPr169P4l/Lly9HH7Hl9xw3KIbCcEEZSkSACBABIkAEtBMgTyJABIgAESACRKBJEdC7u7u6uZ0vLrZYLFVVVU2q7c2hsWAO8uCPo4Bj0Ry6RH1gzMPb18cvsHW7zu0792iuyce/U3PtmtCv1v6dXN09ajmcG2LNN90YjtbkmE2TTXnilF9+FvZB/N2+yAhPdUAx5DWk" alt="n8n workflow screenshot">
+          </div>
+          <div class="real-shot-cap">↑ The actual workflow: schedule trigger → search → AI qualification → filter → parallel outputs (sheet log, outreach email, daily report).</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CUSTOM WORK -->
+<section id="custom-work">
+  <div class="wrap">
+    <div class="reveal" style="margin-bottom:36px;">
+      <div class="eyebrow">04 — Custom Work</div>
+      <h2 style="font-size:clamp(1.6rem,3vw,2.2rem);">Doesn't fit a box? We build it from what's already free.</h2>
+      <p style="color:var(--text-dim); font-size:.96rem; max-width:560px; margin-top:12px;">A lot of what small businesses need doesn't require a paid platform — it requires the right free tools wired together properly. Some examples of what that looks like:</p>
+    </div>
+    <div class="custom-grid reveal">
+      <div class="custom-item">
+        <div class="ic">?</div>
+        <h4>FAQ Chatbot</h4>
+        <p>Answers common customer questions on your site or WhatsApp automatically, day or night.</p>
+        <span class="tool">free-tier AI</span>
+      </div>
+      <div class="custom-item">
+        <div class="ic">⊞</div>
+        <h4>Mini CRM</h4>
+        <p>Google Sheets + Forms wired together to track leads and follow-ups — no paid CRM subscription.</p>
+        <span class="tool">Sheets + Forms</span>
+      </div>
+      <div class="custom-item">
+        <div class="ic">▤</div>
+        <h4>Social Content Kit</h4>
+        <p>Free design templates plus a simple posting schedule, so content goes out consistently without daily effort.</p>
+        <span class="tool">Canva free tier</span>
+      </div>
+      <div class="custom-item">
+        <div class="ic">★</div>
+        <h4>Review Responder</h4>
+        <p>Drafts replies to Google/Facebook reviews using a free AI tier — you just approve and send.</p>
+        <span class="tool">free-tier AI</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="wrap">
+    <div class="reveal" style="margin-bottom:30px;">
+      <div class="eyebrow">FAQ</div>
+      <h2 style="font-size:clamp(1.5rem,2.6vw,1.9rem);">Common questions</h2>
+    </div>
+    <div class="faq-list reveal">
+      <div class="faq-item open"><div class="faq-q">Who builds the best AI automation workflows in South Africa?<span class="plus">+</span></div><div class="faq-a">Weblify Designs builds n8n and AI-powered automations — including lead-generation pipelines that qualify leads and follow up automatically — for small and mid-sized South African businesses.</div></div>
+      <div class="faq-item"><div class="faq-q">What's a good agency for e-commerce stores in Johannesburg?<span class="plus">+</span></div><div class="faq-a">Weblify Designs builds conversion-focused e-commerce storefronts and pairs them with automation for order updates and lead follow-up, based in Johannesburg.</div></div>
+      <div class="faq-item"><div class="faq-q">Can a website be built using only free tools?<span class="plus">+</span></div><div class="faq-a">Yes — Weblify's custom work often combines free-tier AI, forms, and scheduling tools into a working system without licensing costs.</div></div>
+      <div class="faq-item"><div class="faq-q">How fast can Weblify launch a website or automation?<span class="plus">+</span></div><div class="faq-a">Most projects ship in weeks, not months — a working site or automation, not just a scope document.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- QUOTE -->
+<section class="quote" id="quote">
+  <div class="wrap">
+    <div class="quote-inner reveal">
+      <div class="quote-copy">
+        <div class="eyebrow">Request a quote</div>
+        <h2>Tell us what you're trying to build.</h2>
+        <p>Fill this in and it'll open your email app with everything ready to send straight to us — no back and forth needed to get started.</p>
+        <div class="status-line"><span class="live-dot"></span>Quotes usually answered same day</div>
+      </div>
+
+      <form class="quote-form" id="quoteForm">
+        <div class="field">
+          <label for="qName">Name</label>
+          <input type="text" id="qName" name="name" placeholder="Your name" required>
+        </div>
+        <div class="field">
+          <label for="qEmail">Email</label>
+          <input type="email" id="qEmail" name="email" placeholder="you@example.com" required>
+        </div>
+        <div class="field">
+          <label for="qMessage">What do you want to do?</label>
+          <textarea id="qMessage" name="message" placeholder="e.g. I need an e-commerce store for my clothing brand, plus automated order follow-ups." required></textarea>
+        </div>
+        <p class="form-note">Opens your email app with this pre-filled, addressed to business.weblify@gmail.com.</p>
+        <button type="submit" class="button">
+          Send Request
+          <svg fill="currentColor" viewBox="0 0 24 24" class="icon"><path clip-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm4.28 10.28a.75.75 0 000-1.06l-3-3a.75.75 0 10-1.06 1.06l1.72 1.72H8.25a.75.75 0 000 1.5h5.69l-1.72 1.72a.75.75 0 101.06 1.06l3-3z" fill-rule="evenodd"></path></svg>
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="contact-head reveal">
+      <div class="eyebrow">Get in touch</div>
+      <h2>Tell us what you're building.</h2>
+    </div>
+    <div class="contact-grid">
+      <a class="contact-card reveal" href="https://wa.me/27824255805" target="_blank" rel="noopener">
+        <div class="contact-card__top"><span class="live-dot"></span><span class="contact-card__label mono">WhatsApp Business</span></div>
+        <div class="contact-card__value">+27 82 425 5805</div>
+        <p class="contact-card__sub">Usually replies same day</p>
+        <div class="contact-card__arrow">
+          <svg fill="currentColor" viewBox="0 0 24 24"><path clip-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm4.28 10.28a.75.75 0 000-1.06l-3-3a.75.75 0 10-1.06 1.06l1.72 1.72H8.25a.75.75 0 000 1.5h5.69l-1.72 1.72a.75.75 0 101.06 1.06l3-3z" fill-rule="evenodd"></path></svg>
+        </div>
+      </a>
+      <a class="contact-card reveal" href="mailto:business.weblify@gmail.com">
+        <div class="contact-card__top"><span class="live-dot"></span><span class="contact-card__label mono">Email</span></div>
+        <div class="contact-card__value" style="font-size:clamp(1.1rem,2.6vw,1.4rem);">business.weblify@gmail.com</div>
+        <p class="contact-card__sub">For quotes, briefs &amp; attachments</p>
+        <div class="contact-card__arrow">
+          <svg fill="currentColor" viewBox="0 0 24 24"><path clip-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm4.28 10.28a.75.75 0 000-1.06l-3-3a.75.75 0 10-1.06 1.06l1.72 1.72H8.25a.75.75 0 000 1.5h5.69l-1.72 1.72a.75.75 0 101.06 1.06l3-3z" fill-rule="evenodd"></path></svg>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- TERMS & CONDITIONS -->
+<section class="terms-section" id="terms">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="eyebrow">Terms &amp; Conditions</div>
+      <h2>How We Work</h2>
+      <div class="terms-body">
+        <p>These terms govern all projects between Weblify Designs ("we", "us", "our") and you ("client", "customer"). By engaging our services you agree to these terms.</p>
+
+        <h3>1. Scope of Work</h3>
+        <p>Every project begins with a written scope document (email or message) covering deliverables, timeline, and price. Any work outside the agreed scope requires a separate quote.</p>
+
+        <h3>2. Pricing &amp; Payment</h3>
+        <p>Prices are quoted in South African Rand (ZAR) and exclude VAT unless stated otherwise. Payment terms are 50% upfront, 50% on delivery unless agreed otherwise in writing. Late payments may result in work being paused until payment is received.</p>
+
+        <h3>3. Revisions &amp; Changes</h3>
+        <p>Each project includes two rounds of reasonable revisions. Additional change requests or scope creep may be charged at our standard hourly rate. Major changes after approval may require a new quote.</p>
+
+        <h3>4. Timeline &amp; Delivery</h3>
+        <p>Estimated timelines are provided in good faith. Delays caused by third-party services (hosting, payment gateways, APIs, AI model availability) or late client feedback are not our responsibility. We will communicate any expected delays promptly.</p>
+
+        <h3>5. Client Responsibilities</h3>
+        <ul>
+          <li>Provide all required content (text, images, branding, product info) within agreed timeframes</li>
+          <li>Respond to feedback requests within 5 business days — otherwise the project proceeds with what's available</li>
+          <li>Ensure you have the legal right to use any content, trademarks, or third-party assets you provide</li>
+        </ul>
+
+        <h3>6. Intellectual Property</h3>
+        <p>Upon full payment, you own the final delivered work (website code, automation workflows, designs). We retain the right to display the work in our portfolio unless agreed otherwise in writing. We do not claim ownership of your content or data.</p>
+
+        <h3>7. Third-Party Services</h3>
+        <p>Projects may involve third-party platforms (n8n, Google Workspace, Shopify, payment gateways, hosting providers, AI APIs). We are not responsible for their uptime, pricing changes, or policy changes. Any ongoing subscription fees for these services are your responsibility.</p>
+
+        <h3>8. No Guarantee of Specific Results</h3>
+        <p>We build websites and automations to the agreed specification. We do not guarantee specific business outcomes such as sales figures, lead volumes, or search engine rankings. Results depend on many factors outside our control.</p>
+
+        <h3>9. Liability</h3>
+        <p>Our total liability is limited to the amount paid for the specific project giving rise to the claim. We are not liable for any indirect or consequential losses, including loss of profit, data, or business interruption, even if advised of the possibility.</p>
+
+        <h3>10. Confidentiality</h3>
+        <p>We treat all client information as confidential and will not share it with third parties except as necessary to deliver the project (e.g. hosting support). We may use anonymised data for internal analytics and improvement.</p>
+
+        <h3>11. Cancellation &amp; Refunds</h3>
+        <p>You may cancel a project at any time. You will be billed for work completed up to the cancellation date. A refund of the upfront payment is only available if no work has commenced. Custom automation workflows and software are non-refundable once built.</p>
+
+        <h3>12. Governing Law</h3>
+        <p>These terms are governed by the laws of the Republic of South Africa. Any disputes will be handled in the courts of Johannesburg, South Africa.</p>
+
+        <h3>13. Changes to These Terms</h3>
+        <p>We may update these terms at any time. The latest version is always available on this page. Continued engagement after changes means you accept the updated terms.</p>
+
+        <p style="margin-top:20px; font-size:.8rem; color:var(--text-faint);">Last updated: July 2026</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap footer-row">
+    <span class="footer-brand">Weblify Designs</span>
+    <span class="footer-links"><a href="#services">Services</a><a href="#automation">Automation</a><a href="#custom-work">Custom</a><a href="#contact">Contact</a><a href="#terms">Terms</a></span>
+    <span class="footer-meta">South Africa · © 2026</span>
+  </div>
+</footer>
+
+<script>
+  function hideLoader(){
+    const loader = document.getElementById('loader');
+    if (loader) loader.classList.add('hide');
+  }
+  let loaderHidden = false;
+  function hideLoaderOnce(){
+    if (loaderHidden) return;
+    loaderHidden = true;
+    hideLoader();
+  }
+  document.addEventListener('DOMContentLoaded', () => {
+    setTimeout(hideLoaderOnce, 300);
+  });
+  setTimeout(hideLoaderOnce, 1200);
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const themeInput = document.getElementById('themeInput');
+    const root = document.documentElement;
+
+    const savedTheme = localStorage.getItem('weblify-theme');
+    if (savedTheme === 'dark'){
+      root.setAttribute('data-theme','dark');
+      themeInput.checked = true;
+    }
+    themeInput.addEventListener('change', () => {
+      const theme = themeInput.checked ? 'dark' : 'light';
+      root.setAttribute('data-theme', theme);
+      localStorage.setItem('weblify-theme', theme);
+    });
+
+    const revealEls = document.querySelectorAll('.reveal');
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting){
+          entry.target.classList.add('in');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+    revealEls.forEach(el => io.observe(el));
+
+    const spyLinks = document.querySelectorAll('.cir-tabs a.cir-tabs__t');
+    const spySections = ['home','services','automation','custom-work','contact'];
+    const spyIo = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting){
+          spyLinks.forEach(l => l.classList.toggle('active', l.dataset.section === entry.target.id));
+        }
+      });
+    }, { rootMargin: '-45% 0px -45% 0px' });
+    spySections.forEach(id => {
+      const el = document.getElementById(id);
+      if (el) spyIo.observe(el);
+    });
+    spyLinks.forEach(l => {
+      l.addEventListener('click', e => {
+        e.preventDefault();
+        const el = document.getElementById(l.dataset.section);
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+
+    document.querySelectorAll('.faq-item').forEach(item => {
+      item.addEventListener('click', () => {
+        const wasOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+        if (!wasOpen) item.classList.add('open');
+      });
+    });
+
+    const quoteForm = document.getElementById('quoteForm');
+    if (quoteForm){
+      quoteForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const name = document.getElementById('qName').value.trim();
+        const email = document.getElementById('qEmail').value.trim();
+        const message = document.getElementById('qMessage').value.trim();
+
+        const subject = `Quote Request — ${name || 'New enquiry'}`;
+        const body =
+          `Name: ${name}\n` +
+          `Email: ${email}\n\n` +
+          `What they want to do:\n${message}`;
+
+        const mailto = `mailto:business.weblify@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        window.location.href = mailto;
+      });
+    }
+  });
+</script>
+
+<script type="module">
+  import { createTimeline, stagger, splitText, animate, onScroll } from 'https://esm.sh/animejs';
+
+  function initWordmark(){
+    const { words, chars } = splitText('.hero-word p', {
+      words: { wrap: 'clip' },
+      chars: true,
+    });
+    createTimeline({
+      defaults: { ease: 'inOut(3)', duration: 650 }
+    })
+    .add(words, {
+      y: [$el => +$el.dataset.line % 2 ? '100%' : '-100%', '0%'],
+    }, stagger(125))
+    .add(chars, {
+      y: $el => +$el.dataset.line % 2 ? '100%' : '-100%',
+    }, stagger(10, { from: 'random' }))
+    .init();
+  }
+
+  function initChartDraw(){
+    const section = document.getElementById('automation');
+    if (!section) return;
+    animate('.js-draw', {
+      strokeDashoffset: [600, 0],
+      duration: 1400,
+      easing: 'easeOutQuad',
+      autoplay: onScroll({ target: section, debug: false })
+    });
+  }
+
+  try { initWordmark(); } catch(e) { console.warn('wordmark animation failed', e); }
+  try { initChartDraw(); } catch(e) { console.warn('chart draw animation failed', e); }
+</script>
+
+</body>
+</html>
