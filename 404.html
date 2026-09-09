@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#100E0A">
+  <title>Page not found • NGD Trucking</title>
+  <meta name="description" content="404 — the page you were looking for has left the road. Back to Never General Dealer, truck hire and second-hand parts in Klerksoord AH, Akasia.">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20200%20200'%3E%3Cdefs%3E%3ClinearGradient%20id='bg'%20x1='0'%20y1='0'%20x2='0'%20y2='1'%3E%3Cstop%20offset='0'%20stop-color='%231E1912'/%3E%3Cstop%20offset='1'%20stop-color='%23100E0A'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width='200'%20height='200'%20rx='38'%20fill='url(%23bg)'/%3E%3Cpath%20d='M6%20178%20Q100%20158%20194%20178%20L194%20194%20Q100%20174%206%20194%20Z'%20fill='%23100E0A'/%3E%3Cg%20stroke='%23B45309'%20stroke-width='4'%20stroke-linecap='round'%3E%3Cline%20x1='18'%20y1='80'%20x2='34'%20y2='80'/%3E%3Cline%20x1='12'%20y1='102'%20x2='28'%20y2='102'/%3E%3Cline%20x1='20'%20y1='124'%20x2='36'%20y2='124'/%3E%3C/g%3E%3Crect%20x='46'%20y='66'%20width='74'%20height='58'%20rx='5'%20fill='%23F5F0E6'/%3E%3Crect%20x='46'%20y='88'%20width='74'%20height='10'%20rx='3'%20fill='%23B45309'/%3E%3Cpath%20d='M122%2092%20L150%2092%20Q158%2092%20160%20100%20L160%20124%20L122%20124%20Z'%20fill='%23F5F0E6'/%3E%3Cpath%20d='M126%2098%20L146%2098%20Q151%2098%20153%20102%20L153%20120%20L126%20120%20Z'%20fill='%23100E0A'/%3E%3Ccircle%20cx='80'%20cy='134'%20r='15'%20fill='%23100E0A'%20stroke='%238A7A66'%20stroke-width='4'/%3E%3Ccircle%20cx='80'%20cy='134'%20r='5.5'%20fill='%23B45309'/%3E%3Ccircle%20cx='142'%20cy='134'%20r='15'%20fill='%23100E0A'%20stroke='%238A7A66'%20stroke-width='4'/%3E%3Ccircle%20cx='142'%20cy='134'%20r='5.5'%20fill='%23B45309'/%3E%3Cline%20x1='14'%20y1='178'%20x2='186'%20y2='178'%20stroke='%23B45309'%20stroke-width='3.5'%20stroke-dasharray='14%2011'%20stroke-linecap='round'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;600;700&family=Sora:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      min-height: 100vh;
+      font-family: 'Sora', system-ui, sans-serif;
+      background: #100E0A;
+      color: #EAE0D0;
+      -webkit-font-smoothing: antialiased;
+    }
+    .bg {
+      position: fixed; inset: 0; z-index: 0;
+      background:
+        radial-gradient(circle at 50% 0%, rgba(217, 160, 80, 0.10), transparent 55%),
+        linear-gradient(160deg, #100E0A 0%, #3A2A15 55%, #100E0A 100%);
+    }
+    .bg::before {
+      content: ''; position: absolute; left: 50%; bottom: -14%; width: 92%; height: 46%;
+      transform: translateX(-50%);
+      background: radial-gradient(ellipse at 50% 50%, rgba(217, 160, 80, 0.16), transparent 62%);
+      pointer-events: none;
+    }
+    .bg::after {
+      content: ''; position: absolute; top: -30%; right: -22%; width: 64%; height: 92%;
+      background:
+        radial-gradient(circle at 65% 60%, rgba(243, 217, 164, 0.08), transparent 55%),
+        radial-gradient(circle at 30% 20%, rgba(180, 83, 9, 0.14), transparent 60%);
+      filter: blur(10px);
+      pointer-events: none;
+      animation: aurora-drift 16s ease-in-out infinite alternate;
+    }
+    @keyframes aurora-drift {
+      from { transform: translate3d(-4%, -3%, 0) scale(1); }
+      to { transform: translate3d(5%, 4%, 0) scale(1.12); }
+    }
+    .road {
+      position: fixed; left: 0; right: 0; bottom: 0; height: 44px; z-index: 0;
+      background: #0E0C08;
+      border-top: 1px solid rgba(234, 224, 208, 0.10);
+    }
+    .road-dashes {
+      position: absolute; top: 50%; left: 0; right: 0; transform: translateY(-50%);
+      display: flex; justify-content: space-between; padding: 0 4%;
+    }
+    .road-dashes i {
+      width: 46px; max-width: 9vw; height: 5px; border-radius: 3px;
+      background: rgba(217, 160, 80, 0.9);
+    }
+    main {
+      position: relative; z-index: 1;
+      max-width: 720px; margin: 0 auto; padding: 96px 24px 140px;
+      display: flex; flex-direction: column; align-items: center; text-align: center;
+    }
+    .logo {
+      display: inline-flex; align-items: center; gap: 12px;
+      color: inherit; text-decoration: none; margin-bottom: 56px;
+    }
+    .logo-mark { width: 46px; height: 46px; }
+    .logo-word { line-height: 1; text-align: left; }
+    .logo-word .n { font-family: 'Unbounded', sans-serif; font-weight: 700; font-size: 1.25rem; letter-spacing: -0.02em; color: #EAE0D0; }
+    .logo-word .gd { display: block; font-size: 0.54rem; font-weight: 600; letter-spacing: 0.38em; color: #96876F; margin-top: 4px; }
+    .code {
+      font-family: 'Unbounded', sans-serif; font-size: clamp(5rem, 22vw, 9rem);
+      font-weight: 700; letter-spacing: -0.04em; line-height: 0.95;
+      background: linear-gradient(92deg, #92400E 10%, #D9A050 45%, #F3D9A4 70%, #D9A050 92%);
+      background-size: 220% 100%;
+      -webkit-background-clip: text; background-clip: text;
+      -webkit-text-fill-color: transparent; color: transparent;
+      animation: grad-shimmer 7s ease-in-out infinite;
+      margin-bottom: 22px;
+    }
+    @keyframes grad-shimmer {
+      0%, 100% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+    }
+    .tagline {
+      font-family: 'Unbounded', sans-serif;
+      font-size: clamp(1.1rem, 3.4vw, 1.5rem); font-weight: 600; color: #D9A050;
+      margin-bottom: 14px;
+    }
+    p.lead { max-width: 460px; font-size: 1rem; color: #B3A48E; margin-bottom: 34px; }
+    .actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 9px;
+      font-family: 'Sora', system-ui, sans-serif; font-weight: 600; font-size: 0.92rem;
+      padding: 12px 22px; border-radius: 13px; border: 0; cursor: pointer; text-decoration: none;
+      transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+      white-space: nowrap;
+      position: relative; overflow: hidden;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary { background: #854D0E; color: #fff; box-shadow: 0 14px 28px -10px rgba(133, 77, 14, 0.6); }
+    .btn-primary:hover { background: #B45309; }
+    .btn-outline { background: transparent; color: #EAE0D0; border: 1.5px solid rgba(234, 224, 208, 0.35); }
+    .btn-outline:hover { background: rgba(234, 224, 208, 0.07); border-color: rgba(234, 224, 208, 0.6); }
+    .btn::after {
+      content: ''; position: absolute; top: 0; left: -70%; width: 45%; height: 100%;
+      background: linear-gradient(105deg, transparent, rgba(255, 255, 255, 0.32), transparent);
+      transform: skewX(-18deg); pointer-events: none;
+    }
+    .btn:hover::after { animation: btn-shine 0.9s ease; }
+    @keyframes btn-shine { from { left: -70%; } to { left: 130%; } }
+    footer {
+      position: relative; z-index: 1;
+      padding: 0 24px 44px; text-align: center;
+      font-size: 0.85rem; color: #8A7A66;
+    }
+    footer .line { margin-bottom: 6px; }
+    footer .route { font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 0.8rem; color: #B3A48E; letter-spacing: 0.08em; }
+    footer a { color: #D9A050; text-decoration: none; font-weight: 500; }
+    footer a:hover { color: #F3D9A4; text-decoration: underline; }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.001ms !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="bg" aria-hidden="true"></div>
+  <div class="road" aria-hidden="true">
+    <div class="road-dashes"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+  </div>
+
+  <main>
+    <a class="logo" href="/" aria-label="Never General Dealer — back to home">
+      <svg class="logo-mark" viewBox="0 0 200 200" aria-hidden="true">
+        <rect width="200" height="200" rx="38" fill="#1E1912"/>
+        <path d="M6 178 Q100 158 194 178 L194 194 Q100 174 6 194 Z" fill="#100E0A"/>
+        <g stroke="#B45309" stroke-width="4" stroke-linecap="round">
+          <line x1="18" y1="80" x2="34" y2="80"/>
+          <line x1="12" y1="102" x2="28" y2="102"/>
+          <line x1="20" y1="124" x2="36" y2="124"/>
+        </g>
+        <rect x="46" y="66" width="74" height="58" rx="5" fill="#F5F0E6"/>
+        <rect x="46" y="88" width="74" height="10" rx="3" fill="#B45309"/>
+        <path d="M122 92 L150 92 Q158 92 160 100 L160 124 L122 124 Z" fill="#F5F0E6"/>
+        <path d="M126 98 L146 98 Q151 98 153 102 L153 120 L126 120 Z" fill="#100E0A"/>
+        <circle cx="80" cy="134" r="15" fill="#100E0A" stroke="#8A7A66" stroke-width="4"/>
+        <circle cx="80" cy="134" r="5.5" fill="#B45309"/>
+        <circle cx="142" cy="134" r="15" fill="#100E0A" stroke="#8A7A66" stroke-width="4"/>
+        <circle cx="142" cy="134" r="5.5" fill="#B45309"/>
+        <line x1="14" y1="178" x2="186" y2="178" stroke="#B45309" stroke-width="3.5" stroke-dasharray="14 11" stroke-linecap="round"/>
+      </svg>
+      <span class="logo-word"><span class="n">NEVER</span><span class="gd">GENERAL DEALER</span></span>
+    </a>
+
+    <h1 class="code" id="code">404</h1>
+    <p class="tagline">THE ROUTE ENDS HERE</p>
+    <p class="lead">The page you're looking for has left the road — it may have moved, or it never existed. Let's get you back to the yard.</p>
+
+    <div class="actions">
+      <a href="/" class="btn btn-primary"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2h-4v-6h-6v6H5a2 2 0 0 1-2-2z"/></svg>Back to home</a>
+      <a href="tel:0677518653" class="btn btn-outline"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>Call 067 751 8653</a>
+    </div>
+  </main>
+
+  <footer>
+    <div class="line">Never General Dealer — Klerksoord AH, Akasia, 0200</div>
+    <div class="route">TRUCK HIRE • SECOND-HAND PARTS · MON–FRI 7:00 AM – 4:00 PM</div>
+    <div class="line" style="margin-top:10px">&copy; 2026 NGD Trucking — <a href="tel:0681098999">068 109 8999</a> · <a href="https://wa.me/27677518653" target="_blank" rel="noopener">WhatsApp</a></div>
+  </footer>
+</body>
+</html>
